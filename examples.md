@@ -36,7 +36,7 @@ define command {
 }
 ```
 But the critical condition service output in the frontend (and in alerts) would
-this:
+be this:
 ```
 CRITICAL: Entropy too low (90)
 ```
