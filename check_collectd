@@ -53,7 +53,7 @@
 # collectd-nagios must be in the user's PATH which is the default if collectd
 # was installed via package managers. Queries using collectd-nagios must be
 # working (e.g. you configured the unixsock plugin correctly). Although,
-# check_collectd was tested using collectd-5.5.0 and perl-5.20.3, it most
+# check_collectd was tested using collectd-5.8.1 and perl-5.20.3, it most
 # probably also works with older versions of both tools.
 ################################################################################
 
@@ -201,6 +201,10 @@ if (defined $fmt && $fmt !~ /^\s*$/) {
     my @perfdata_values = perfdata $2;
     push @printf_args, @perfdata_values;
     printf "$fmt |$2\n", @printf_args;
+  }
+  elsif (/^ERROR: (.*Server error: No such value.*)$/) {
+    $retval = 3;
+    print "UNKNOWN: $1\n";
   }
   else {
     print "$output";

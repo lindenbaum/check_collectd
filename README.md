@@ -48,5 +48,5 @@ Prerequisites?
 `collectd` was installed via package managers. Queries using `collectd-nagios`
 must be working (e.g. you configured the
 [unixsock](https://collectd.org/documentation/manpages/collectd-unixsock.5.shtml)
-plugin correctly). Although, `check_collectd` was tested using _collectd-5.5.0_
+plugin correctly). Although, `check_collectd` was tested using _collectd-5.8.1_
 and _perl-5.20.3_, it most probably also works with older versions of both tools.
